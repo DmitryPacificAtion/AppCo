@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles.scss';
-
-const App = () => <div className="hello">Hello World</div>
+import App from './App';
 
 ReactDOM.render(
     <App />,

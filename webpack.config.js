@@ -13,8 +13,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    path: path.resolve(path.join(__dirname, 'dist')),
   },
   optimization: {
     splitChunks: {
@@ -66,7 +65,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Scalse masrer',
+      title: 'AppCo',
       filename: 'index.html',
       template: './frontend/index.html',
       inject: 'body',
