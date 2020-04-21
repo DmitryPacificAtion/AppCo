@@ -1,0 +1,16 @@
+.button {
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  padding: 17px 24px;
+  text-decoration: none;
+  display: inline-block;
+  &--light {
+    color: #3a80ba;
+    background: #ffffff;
+  }
+  &--dark {
+    background: #3a80ba;
+    color: #ffffff;
+  }
+}
