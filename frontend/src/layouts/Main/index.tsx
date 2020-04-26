@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../../components/Container";
 import AdvantageCard from "./AdvantageCard";
 import Button from "../../components/Button";
-import "./styles.scss";
+import "./index.scss";
 import PlanCard from "./PlanCard";
 import { Link } from "react-router-dom";
 
@@ -48,7 +48,7 @@ const Main = () => (
             Our design projects are fresh and simple and will benefit your business greatly. Learn
             more about our work!
           </p>
-          <Button to="#">View Stats</Button>
+          <Button to="#" className="first-cta__button">View Stats</Button>
         </div>
         <div className="first-cta__right-part">
           <img src={mobile} alt="App mobile view" />
@@ -91,7 +91,7 @@ const Main = () => (
               transition wireless customer service without goal-oriented catalysts for change.
               Collaboratively.
             </p>
-            <Button to="#">Learn more</Button>
+            <Button to="#" className="second-cta__button">Learn more</Button>
           </div>
           <div className="second-cta__right-part">
             <img src={laptop} alt="App laptop view" />

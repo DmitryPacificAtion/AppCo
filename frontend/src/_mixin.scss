@@ -1,0 +1,22 @@
+@import "_variables";
+
+@mixin screen-medium {
+  @include screen($medium) {
+    @content;
+  }
+}
+@mixin screen-small {
+  @include screen($small) {
+    @content;
+  }
+}
+@mixin screen-tiny {
+  @include screen($tiny) {
+    @content;
+  }
+}
+@mixin screen($size) {
+  @media all and (max-width: $size) {
+    @content;
+  }
+}
