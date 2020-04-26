@@ -4,7 +4,7 @@ main {
   width: 1440px;
   margin: 0 auto;
 }
-.header-waves {
+.waves {
   position: absolute;
   z-index: 0;
 }
@@ -116,6 +116,10 @@ main {
   margin-top: 80px;
   padding-top: 20px;
   text-align: center;
+  &__wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
   &__decoration {
     position: absolute;
     z-index: 0;
@@ -136,5 +140,68 @@ main {
     line-height: 28px;
     font-weight: normal;
     margin-bottom: 32px;
+  }
+  &__contact {
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    padding: 32px 0 48px;
+    color: #7e7e7e;
+    &--link {
+      font-weight: bold;
+      text-decoration: none;
+      color: #3a80ba;
+    }
+  }
+}
+
+// Footer
+.footer {
+  &__subscribe {
+    padding-top: 26px;
+    text-align: center;
+    font-size: 16px;
+    &--wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 580px;
+      margin: 0 auto;
+      height: 64px;
+      background: #ffffff;
+      border: 1px solid #f1f1f1;
+      box-sizing: border-box;
+      border-radius: 10px;
+    }
+    &--input {
+      outline: none;
+      border: none;
+      padding: 19px;
+      line-height: 26px;
+      color: #b9b9b9;
+      border-radius: 10px;
+    }
+    &--button {
+      background-color: #3a80ba;
+      color: #ffffff;
+      margin: 3px 4px;
+      width: 176px;
+      line-height: 23px;
+    }
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    margin-top: 24px;
+    &--logo {
+      font-size: 32px;
+      line-height: 39px;
+    }
+    &--terms,
+    &--copyright {
+      font-size: 16px;
+      line-height: 23px;
+    }
   }
 }

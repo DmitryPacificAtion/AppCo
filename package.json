@@ -4,7 +4,7 @@
   "description": "My test project",
   "scripts": {
     "build": "webpack",
-    "serve": "node ./frontend/server.js"
+    "start": "node ./frontend/server.js"
   },
   "repository": {
     "type": "git",
