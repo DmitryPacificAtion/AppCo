@@ -1,22 +1,27 @@
 @import "_variables";
 
+@mixin screen-large {
+  @media all and (min-width: $medium) {
+    @content;
+  }
+}
 @mixin screen-medium {
-  @include screen($medium) {
+  @media all and (max-width: $medium - 1) and (min-width: $small) {
     @content;
   }
 }
 @mixin screen-small {
-  @include screen($small) {
+  @media all and (max-width: $small - 1) and (min-width: $tiny) {
     @content;
   }
 }
 @mixin screen-tiny {
-  @include screen($tiny) {
+  @media all and (max-width: $tiny - 1) {
     @content;
   }
 }
-@mixin screen($size) {
-  @media all and (max-width: $size) {
+@mixin screen($rule) {
+  @media all and (min-width: $size) {
     @content;
   }
 }

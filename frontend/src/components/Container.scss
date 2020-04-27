@@ -1,10 +1,10 @@
 @import "../_mixin";
 
 .container {
-  width: 1180px;
   margin: 0 auto;
   position: relative;
-  @include screen-medium {
-    width: 1280px;
+  max-width: 1320px;
+  @include screen-large {
+    max-width: 1180px;
   }
 }
