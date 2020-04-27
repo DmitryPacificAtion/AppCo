@@ -1,17 +1,20 @@
 @import "../../_mixin";
 
 .plan-card {
+  display: flex;
+  flex-flow: column wrap;
   border: 2px solid #f1f1f1;
   padding-bottom: 40px;
+  flex: 1 0 calc(60% - 40px);
   &:nth-child(2) {
     color: #3a80ba;
     border: none;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+    & .plan-card__price {
+      font-size: 56px;
+      line-height: 68px;
+    }
     @include screen-large {
-      & .plan-card__price {
-        font-size: 56px;
-        line-height: 68px;
-      }
       & .plan-card__price:after {
         top: -46px;
       }
@@ -74,49 +77,37 @@
       font-size: 16px;
     }
   }
-  &__preview {
-    @include screen-small {
-      width: 450px;
-    }
-    @include screen-large {
-      width: auto;
-    }
-  }
   &__price {
     font-weight: bold;
-    font-size: 56px;
-    line-height: 68px;
+    font-size: 48px;
+    line-height: 59px;
+    order: 2;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
     &:after {
+      content: "";
+      position: relative;
+      top: -37px;
+      height: 0;
+      width: 250px;
+      margin: 0 auto;
+      display: block;
       @include screen-medium {
         content: url(../../../assets/line.png);
-        position: relative;
-        top: -37px;
-        // top: -43px;
-        height: 0;
-        width: 250px;
-        margin: 0 auto;
-        display: block;
       }
     }
-    @include screen-small {
-      order: 2;
-      width: 90%;
-      margin-bottom: 30px;
-    }
-    @include screen-large {
+    @include screen-medium {
       order: 1;
-      font-size: 48px;
-      line-height: 59px;
       width: auto;
     }
   }
   &__button {
     cursor: pointer;
-    @include screen-small {
-      font-size: 30px;
-      order: 3;
-      width: 90%;
-    }
+    width: 90%;
+    margin: 0 auto;
+    font-size: 30px;
+    order: 3;
     @include screen-medium {
       font-size: 22px;
       letter-spacing: 1.25px;
@@ -128,12 +119,11 @@
     }
   }
   @include screen-small {
-    width: 80%;
-    display: flex;
-    flex-flow: row wrap;
+    flex: 1 0 60%;
     margin-bottom: 50px;
   }
-  @include screen-large {
+  @include screen-medium {
+    flex: none;
     width: 380px;
     display: block;
     margin-bottom: 0px;

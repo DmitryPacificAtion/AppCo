@@ -11,12 +11,10 @@ main {
   }
 }
 .header {
-  background: url(../../../assets/waves-header.png) top left no-repeat;
+  background: linear-gradient(95.82deg, #255d8b 1.6%, #3a80ba 96.44%);
   background-size: cover;
   &__logo {
     color: #ffffff;
-    font-size: 63px;
-    line-height: 73px;
     padding: 12px 0;
     font-size: 40px;
     line-height: 49px;
@@ -25,7 +23,11 @@ main {
     }
   }
   @include screen-small {
-    // background: linear-gradient(95.82deg, #255d8b 1.6%, #3a80ba 96.44%);
+    background: url(../../../assets/waves-header.png) top left no-repeat;
+    height: 400px;
+  }
+  @include screen-medium {
+    height: auto;
   }
 }
 .first-cta {
@@ -34,10 +36,14 @@ main {
   &__title {
     color: #ffffff;
     font-weight: normal;
-    font-size: 40px;
-    line-height: 51px;
+    font-size: 32px;
+    line-height: 44px;
     margin: 10px 0;
     text-align: left;
+    @include screen-small {
+      font-size: 40px;
+      line-height: 51px;
+    }
     @include screen-medium {
       margin: 24px 0;
     }
@@ -48,8 +54,10 @@ main {
   }
   &__left-part {
     flex: 1 0 100%;
+    padding-bottom: 50px;
     @include screen-medium {
       flex: 1 0 50%;
+      padding-bottom: 0;
     }
   }
   &__right-part {
@@ -65,10 +73,11 @@ main {
   }
   &__description {
     color: #ffffff;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 142%;
     font-weight: normal;
     @include screen-small {
+      font-size: 20px;
       text-align: left;
       width: 700px;
     }
@@ -106,6 +115,7 @@ main {
     font-size: 20px;
     line-height: 142%;
     font-weight: normal;
+    margin-top: 40px;
     @include screen-small {
       max-width: 100%;
       margin-bottom: 80px;
@@ -134,10 +144,8 @@ main {
   background: linear-gradient(93.19deg, #255d8b 2.29%, #3a80ba 96.79%);
   &__inner {
     display: flex;
-    @include screen-small {
-      flex-direction: column;
-      align-items: center;
-    }
+    flex-direction: column;
+    align-items: center;
     @include screen-medium {
       flex-direction: row;
       justify-content: space-between;
@@ -146,13 +154,14 @@ main {
   &__left-part {
     color: #ffffff;
     flex: 1 0 100%;
+    padding-bottom: 50px;
     @include screen-medium {
       flex: 1 0 50%;
+      padding-bottom: 0px;
     }
   }
   &__right-part {
     position: relative;
-    flex: 1 0 100%;
     display: none;
     @include screen-medium {
       display: block;
@@ -217,12 +226,10 @@ main {
   padding-top: 20px;
   text-align: center;
   &__wrapper {
-    @include screen-small {
-      flex-direction: column;
-      align-items: center;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     @include screen-large {
-      display: flex;
       flex-direction: row;
       justify-content: space-around;
     }
