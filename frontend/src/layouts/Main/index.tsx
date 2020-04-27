@@ -12,30 +12,6 @@ const laptop = require("../../../assets/laptop.png");
 const Main = () => (
   <main>
     <header className="header">
-      <svg
-        className="waves"
-        width="1440"
-        height="655"
-        viewBox="0 0 1440 655"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0 0H1440V104.272L1378.2 217.493C1308.11 345.888 1173.41 425.778 1027.02 425.778H894.837C810.446 425.778 728.218 452.441 659.915 501.953L553.869 578.824C404.575 687.046 200.558 679.249 59.9767 559.948L0 509.05V0Z"
-          fill="url(#paint0_linear)"
-        />
-        <linearGradient
-          id="paint0_linear"
-          x1="31"
-          y1="68.7909"
-          x2="1412.52"
-          y2="119.271"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#255D8B" />
-          <stop offset="1" stopColor="#3A80BA" />
-        </linearGradient>
-      </svg>
       <Container>
         <div className="header__logo">AppCo</div>
         <section className="first-cta">
@@ -154,30 +130,6 @@ const Main = () => (
       </Container>
     </section>
     <footer className="footer">
-      <svg
-        width="1440"
-        height="183"
-        viewBox="0 0 1440 183"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="waves"
-      >
-        <path
-          d="M0 183.465H1440V17.9648C1440 17.9648 1362 17.9648 1296.5 6.46484C1231 -5.03516 1071 -1.18745 1023 17.9648C975 37.1171 828.5 86.9648 768 86.9648C566.302 86.9648 515.5 34.9648 428.5 34.9648C341.5 34.9648 284 48.9648 188 74.4648C92 99.9648 0 48.9648 0 48.9648V183.465Z"
-          fill="url(#paint0_linear)"
-        />
-        <linearGradient
-          id="paint0_linear"
-          x1="31.0003"
-          y1="258.787"
-          x2="1400.16"
-          y2="119.346"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#255D8B" />
-          <stop offset="1" stopColor="#3A80BA" />
-        </linearGradient>
-      </svg>
       <Container>
         <form className="footer__subscribe">
           <label className="footer__subscribe--wrapper">

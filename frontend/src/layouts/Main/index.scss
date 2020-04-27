@@ -10,45 +10,22 @@ main {
     margin: 0 auto;
   }
 }
-.waves {
-  position: absolute;
-  z-index: 0;
-}
 .header {
-  position: relative;
-  background: linear-gradient(95.82deg, #255d8b 1.6%, #3a80ba 96.44%);
-  .waves {
-    display: none;
-  }
+  background: url(../../../assets/waves-header.png) top left no-repeat;
+  background-size: cover;
   &__logo {
+    color: #ffffff;
     font-size: 63px;
     line-height: 73px;
-    @include screen-small {
-      font-size: 56px;
-      line-height: 65px;
-    }
+    padding: 12px 0;
+    font-size: 40px;
+    line-height: 49px;
     @include screen-medium {
-      font-size: 48px;
-      line-height: 57px;
-    }
-    @include screen-large {
-      font-size: 40px;
-      line-height: 49px;
       padding: 24px 0;
-      color: #ffffff;
     }
   }
   @include screen-small {
-    background: #ffffff;
-    .waves {
-      display: block;
-    }
-  }
-  @include screen-large {
-    background: none;
-    .waves {
-      display: block;
-    }
+    // background: linear-gradient(95.82deg, #255d8b 1.6%, #3a80ba 96.44%);
   }
 }
 .first-cta {
@@ -57,80 +34,54 @@ main {
   &__title {
     color: #ffffff;
     font-weight: normal;
-    font-size: 72px;
-    line-height: 75px;
-    @include screen-small {
-      font-size: 64px;
-      line-height: 75px;
-      margin: 30px 0;
-      text-align: left;
-    }
+    font-size: 40px;
+    line-height: 51px;
+    margin: 10px 0;
+    text-align: left;
     @include screen-medium {
-      font-size: 56px;
-      line-height: 67px;
+      margin: 24px 0;
     }
     @include screen-large {
       font-size: 48px;
       line-height: 59px;
     }
   }
-  &__right-part {
-    @include screen-small {
-      flex: auto;
-      text-align: center;
-      &--preview {
-        height: 780px;
-      }
-    }
+  &__left-part {
+    flex: 1 0 100%;
     @include screen-medium {
-      flex: 1 0 30%;
-    }
-    @include screen-large {
       flex: 1 0 50%;
-      text-align: right;
-      &--preview {
-        height: auto;
-      }
     }
   }
-  &__right-left {
+  &__right-part {
+    flex: 1 0 100%;
+    text-align: center;
+    margin-top: 50px;
+    display: none;
     @include screen-medium {
-      flex: 1 0 70%;
-    }
-    @include screen-large {
       flex: 1 0 50%;
+      text-align: right;
+      display: block;
     }
   }
   &__description {
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 142%;
+    font-weight: normal;
     @include screen-small {
-      font-size: 36px;
-      line-height: 42px;
       text-align: left;
-      width: 1100px;
+      width: 700px;
     }
     @include screen-medium {
-      font-size: 28px;
-      line-height: 36px;
-    }
-    @include screen-large {
-      font-size: 20px;
-      color: #ffffff;
-      font-weight: normal;
       margin-bottom: 32px;
-      line-height: 142%;
       width: auto;
     }
   }
-  &__button {
-    @include screen-small {
-      font-size: 30px;
-    }
-    @include screen-medium {
-      font-size: 22px;
-    }
-    @include screen-large {
-      font-size: 16px;
-    }
+  @include screen-small {
+    flex-flow: column;
+  }
+  @include screen-medium {
+    flex-flow: row;
   }
 }
 
@@ -140,39 +91,28 @@ main {
   text-align: center;
   &__title {
     font-weight: normal;
-    font-size: 56px;
-    line-height: 63px;
+    font-size: 32px;
+    line-height: 39px;
     @include screen-small {
-      font-size: 48px;
-      line-height: 55px;
       margin-top: 80px;
     }
     @include screen-medium {
-      font-size: 40px;
-      line-height: 47px;
-    }
-    @include screen-medium {
-      font-size: 32px;
-      line-height: 39px;
+      width: 535px;
+      margin: 16px auto 24px;
     }
   }
   &__description {
     color: #7e7e7e;
+    font-size: 20px;
     line-height: 142%;
     font-weight: normal;
-    font-size: 44px;
     @include screen-small {
-      font-size: 36px;
       max-width: 100%;
       margin-bottom: 80px;
     }
     @include screen-medium {
-      font-size: 28px;
-    }
-    @include screen-large {
       max-width: 780px;
       margin: 0 auto;
-      font-size: 20px;
       margin-bottom: 40px;
     }
   }
@@ -180,11 +120,9 @@ main {
 .card-container {
   display: flex;
   margin-bottom: 80px;
-  @include screen-small {
-    flex-direction: column;
-    align-items: center;
-  }
-  @include screen-large {
+  flex-direction: column;
+  align-items: center;
+  @include screen-medium {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
@@ -193,42 +131,39 @@ main {
 
 // Screen 3
 .second-cta {
+  background: linear-gradient(93.19deg, #255d8b 2.29%, #3a80ba 96.79%);
   &__inner {
     display: flex;
     @include screen-small {
       flex-direction: column;
       align-items: center;
     }
-    @include screen-large {
+    @include screen-medium {
       flex-direction: row;
       justify-content: space-between;
     }
   }
   &__left-part {
     color: #ffffff;
-    @include screen-small {
-      flex: auto;
-    }
-    @include screen-large {
+    flex: 1 0 100%;
+    @include screen-medium {
       flex: 1 0 50%;
     }
   }
   &__right-part {
     position: relative;
-    @include screen-small {
-      flex: none;
-      width: 100%;
-      top: 0;
-      &--preview {
-        height: 600px;
-      }
-    }
+    flex: 1 0 100%;
+    display: none;
     @include screen-medium {
-      top: 27px;
-    }
-    @include screen-large {
+      display: block;
       flex: 1 0 50%;
       text-align: right;
+      top: 27px;
+      &--preview {
+        height: 300px;
+      }
+    }
+    @include screen-large {
       top: -27px;
       &--preview {
         height: auto;
@@ -237,61 +172,41 @@ main {
   }
   &__title {
     font-weight: bold;
-    font-size: 56px;
-    line-height: 63px;
-    @include screen-small {
-      font-size: 48px;
-      line-height: 55px;
-      margin: 60px 0 16px;
-    }
+    font-size: 40px;
+    line-height: 47px;
+    margin-top: 50px;
     @include screen-medium {
-      font-size: 40px;
-      line-height: 47px;
-    }
-    @include screen-medium {
+      margin-top: 26px;
       font-size: 32px;
       line-height: 39px;
     }
   }
   &__description {
     font-weight: normal;
-    font-size: 40px;
+    font-size: 24px;
     line-height: 142%;
-    @include screen-small {
-      font-size: 32px;
-    }
+    margin-bottom: 50px;
     @include screen-medium {
-      font-size: 24px;
-    }
-    @include screen-large {
       font-size: 16px;
       margin-bottom: 25px;
     }
   }
   &__button {
     width: 172px; // 220 - paddings
-    @include screen-small {
-      font-size: 30px;
-    }
+    font-size: 22px;
     @include screen-medium {
-      font-size: 22px;
-    }
-    @include screen-large {
       font-size: 16px;
     }
   }
-
   @include screen-small {
-    height: 980px;
+    height: 450px;
   }
   @include screen-medium {
-    height: 500px;
+    height: 327px;
+    border-top: 45px solid #ffffff;
   }
   @include screen-large {
     height: 400px;
-    width: 1440px;
-    background: linear-gradient(93.19deg, #255d8b 2.29%, #3a80ba 96.79%);
-    border-top: 45px solid #ffffff;
   }
 }
 
@@ -313,7 +228,9 @@ main {
     }
   }
   &__decoration {
-    @include screen-large {
+    display: none;
+    @include screen-medium {
+      display: block;
       position: absolute;
       z-index: 0;
       top: 0;
@@ -321,41 +238,21 @@ main {
     }
   }
   &__title {
-    font-size: 56px;
-    line-height: 63px;
+    font-size: 32px;
+    line-height: 39px;
     font-weight: normal;
-    @include screen-small {
-      font-size: 48px;
-      line-height: 55px;
-    }
-    @include screen-medium {
-      font-size: 40px;
-      line-height: 47px;
-    }
-    @include screen-large {
-      margin-top: 0;
-      font-size: 32px;
-      line-height: 39px;
-    }
+    margin-top: 0;
+    margin-bottom: 24px;
   }
   &__description {
     color: #7e7e7e;
-    font-size: 44px;
+    font-size: 20px;
     line-height: 142%;
     font-weight: normal;
     margin-bottom: 32px;
-    @include screen-small {
-      font-size: 36px;
-    }
-    @include screen-medium {
-      font-size: 28px;
-    }
-    @include screen-large {
-      font-size: 20px;
-    }
   }
   &__contact {
-    font-size: 44px;
+    font-size: 20px;
     line-height: 142%;
     text-align: center;
     padding: 32px 0 48px;
@@ -365,27 +262,17 @@ main {
       text-decoration: none;
       color: #3a80ba;
     }
-    @include screen-small {
-      font-size: 36px;
-    }
-    @include screen-medium {
-      font-size: 28px;
-    }
-    @include screen-large {
-      font-size: 20px;
-    }
   }
 }
 
 // Footer
 .footer {
+  background: url(../../../assets/waves-footer.png) top left no-repeat;
+  background-size: cover;
   &__subscribe {
     padding-top: 26px;
     text-align: center;
-    font-size: 22px;
-    @include screen-large {
-      font-size: 16px;
-    }
+    font-size: 16px;
     &--wrapper {
       display: flex;
       background: #ffffff;
@@ -410,9 +297,6 @@ main {
       }
       @include screen-medium {
         padding: 19px;
-        font-size: 22px;
-      }
-      @include screen-large {
         font-size: 16px;
       }
     }
@@ -420,17 +304,7 @@ main {
       background-color: #3a80ba;
       color: #ffffff;
       margin: 4px;
-      font-size: 38px;
-      @include screen-small {
-        font-size: 30px;
-      }
       @include screen-medium {
-        font-size: 22px;
-        letter-spacing: 1.25px;
-      }
-      @include screen-large {
-        font-size: 16px;
-        letter-spacing: 1px;
         width: 176px;
       }
     }
@@ -438,48 +312,21 @@ main {
   &__info {
     display: flex;
     color: #ffffff;
-    @include screen-large {
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 24px;
-    }
+    justify-content: space-between;
+    margin-top: 24px;
+    align-items: center;
     &--logo {
-      @include screen-small {
-        font-size: 48px;
-        line-height: 55px;
-      }
-      @include screen-medium {
-        font-size: 40px;
-        line-height: 47px;
-      }
-      @include screen-large {
-        font-size: 32px;
-        line-height: 39px;
-      }
+      font-size: 32px;
+      line-height: 39px;
     }
     &--terms,
     &--copyright {
       line-height: 142%;
-      font-size: 26px;
-      @include screen-medium {
-        font-size: 18px;
-      }
-      @include screen-large {
-        font-size: 16px;
-      }
+      font-size: 16px;
     }
   }
   @include screen-small {
-    background: linear-gradient(95.82deg, #255d8b 1.6%, #3a80ba 96.44%);
+    // background: linear-gradient(95.82deg, #255d8b 1.6%, #3a80ba 96.44%);
     padding: 20px 0 30px;
-    .waves {
-      display: none;
-    }
-  }
-  @include screen-large {
-    background: none;
-    .waves {
-      display: block;
-    }
   }
 }
