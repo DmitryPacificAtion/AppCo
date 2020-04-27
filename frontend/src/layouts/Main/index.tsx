@@ -11,6 +11,7 @@ const laptop = require("../../../assets/laptop.png");
 
 const Main = () => (
   <main>
+    <header className="header">
       <svg
         className="waves"
         width="1440"
@@ -36,10 +37,8 @@ const Main = () => (
         </linearGradient>
       </svg>
       <Container>
-      <header className="header">
         <div className="header__logo">AppCo</div>
-      </header>
-    <section className="first-cta">
+        <section className="first-cta">
         <div className="first-cta__left-part">
           <h1 className="first-cta__title">
             <strong>Brainstorming</strong> for desired perfect Usability
@@ -55,33 +54,36 @@ const Main = () => (
         <div className="first-cta__right-part">
           <img src={mobile} alt="App mobile view" className="first-cta__right-part--preview" />
         </div>
-    </section>
-    <section className="advantages">
-      <h1 className="advantages__title">
-        Why <strong>small business owners love</strong> AppCo?
-      </h1>
-      <p className="advantages__description">
-        Our design projects are fresh and simple and will benefit your business greatly. Learn more
-        about our work!
-      </p>
-      <figcaption className="card-container">
-        <AdvantageCard
-          type={"design"}
-          title="Clean Design"
-          description="Increase sales by showing true dynamics of your website."
-        />
-        <AdvantageCard
-          type={"security"}
-          title="Clean Design"
-          description="Increase sales by showing true dynamics of your website."
-        />
-        <AdvantageCard
-          type={"retina"}
-          title="Clean Design"
-          description="Increase sales by showing true dynamics of your website."
-        />
-      </figcaption>
-    </section>
+      </section>
+      </Container>
+    </header>
+    <Container>
+      <section className="advantages">
+        <h1 className="advantages__title">
+          Why <strong>small business owners love</strong> AppCo?
+        </h1>
+        <p className="advantages__description">
+          Our design projects are fresh and simple and will benefit your business greatly. Learn
+          more about our work!
+        </p>
+        <figcaption className="card-container">
+          <AdvantageCard
+            type={"design"}
+            title="Clean Design"
+            description="Increase sales by showing true dynamics of your website."
+          />
+          <AdvantageCard
+            type={"security"}
+            title="Secure Data"
+            description="Build your online store’s trust using Social Proof & Urgency."
+          />
+          <AdvantageCard
+            type={"retina"}
+            title="Retina Ready"
+            description="Realize importance of social proof in customer’s purchase decision."
+          />
+        </figcaption>
+      </section>
     </Container>
     <section className="second-cta">
       <Container>

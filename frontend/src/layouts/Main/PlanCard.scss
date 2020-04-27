@@ -1,17 +1,29 @@
 @import "../../_mixin";
 
 .plan-card {
-  width: 380px;
   border: 2px solid #f1f1f1;
   padding-bottom: 40px;
   &:nth-child(2) {
     color: #3a80ba;
     border: none;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+    @include screen-large {
+      & .plan-card__price {
+        font-size: 56px;
+        line-height: 68px;
+      }
+      & .plan-card__price:after {
+        top: -46px;
+      }
+    }
   }
   &__left-part {
     @include screen-small {
       flex: 1 0 50%;
+    }
+    @include screen-large {
+      flex: 1 0 100%;
+      margin-bottom: 16px;
     }
   }
   &__right-part {
@@ -20,59 +32,54 @@
       display: flex;
       flex-flow: column;
     }
-  }
-  &__preview {
-    margin-bottom: 15px;
-    @include screen-small {
-      width: 450px;
+    @include screen-large {
+      flex: 1 0 100%;
+      display: block;
     }
   }
   &__title {
     font-weight: 600;
     color: #1a1a1a;
     margin-bottom: 16px;
-    @include screen-large {
-      font-size: 24px;
-      line-height: 29px;
-    }
-    @include screen-medium {
-      font-size: 32px;
-      line-height: 37px;
-    }
     @include screen-small {
       font-size: 40px;
       line-height: 45px;
       flex: 1 0 100%;
     }
+    @include screen-medium {
+      font-size: 32px;
+      line-height: 37px;
+    }
+    @include screen-large {
+      font-size: 24px;
+      line-height: 29px;
+    }
   }
   &__description {
-    margin-top: 24px;
-    text-align: left;
-    font-size: 16px;
     line-height: 162%;
     color: #7e7e7e;
-    text-align: center;
-    @include screen-medium {
-      font-size: 22px;
-    }
+    font-size: 38px;
     @include screen-small {
       font-size: 30px;
       order: 1;
       text-align: left;
       margin-bottom: 50px;
     }
-  }
-  &__button {
-    width: 220px;
-    cursor: pointer;
     @include screen-medium {
       font-size: 22px;
-      letter-spacing: 1.25px;
+      text-align: center;
     }
+    @include screen-large {
+      margin-top: 24px;
+      font-size: 16px;
+    }
+  }
+  &__preview {
     @include screen-small {
-      font-size: 30px;
-      order: 3;
-      width: 90%;
+      width: 450px;
+    }
+    @include screen-large {
+      width: auto;
     }
   }
   &__price {
@@ -80,15 +87,15 @@
     font-size: 56px;
     line-height: 68px;
     &:after {
-      content: url(../../../assets/line.png);
-      position: relative;
-      top: -53px;
-      height: 0;
-      width: 250px;
-      margin: 0 auto;
-      display: block;
       @include screen-medium {
-        top: -43px;
+        content: url(../../../assets/line.png);
+        position: relative;
+        top: -37px;
+        // top: -43px;
+        height: 0;
+        width: 250px;
+        margin: 0 auto;
+        display: block;
       }
     }
     @include screen-small {
@@ -96,11 +103,39 @@
       width: 90%;
       margin-bottom: 30px;
     }
+    @include screen-large {
+      order: 1;
+      font-size: 48px;
+      line-height: 59px;
+      width: auto;
+    }
+  }
+  &__button {
+    cursor: pointer;
+    @include screen-small {
+      font-size: 30px;
+      order: 3;
+      width: 90%;
+    }
+    @include screen-medium {
+      font-size: 22px;
+      letter-spacing: 1.25px;
+    }
+    @include screen-large {
+      order: 1;
+      width: 220px;
+      font-size: 16px;
+    }
   }
   @include screen-small {
     width: 80%;
     display: flex;
     flex-flow: row wrap;
     margin-bottom: 50px;
+  }
+  @include screen-large {
+    width: 380px;
+    display: block;
+    margin-bottom: 0px;
   }
 }
