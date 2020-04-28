@@ -5,6 +5,7 @@
   flex-flow: column wrap;
   border: 2px solid #f1f1f1;
   padding-bottom: 40px;
+  margin-bottom: 50px;
   flex: 1 0 calc(60% - 40px);
   &:nth-child(2) {
     color: #3a80ba;
@@ -13,10 +14,11 @@
     & .plan-card__price {
       font-size: 56px;
       line-height: 68px;
+      margin-bottom: 30px;
     }
     @include screen-large {
       & .plan-card__price:after {
-        top: -46px;
+        top: -51px;
       }
     }
   }
@@ -44,37 +46,24 @@
     font-weight: 600;
     color: #1a1a1a;
     margin-bottom: 16px;
+    font-size: 24px;
+    line-height: 29px;
     @include screen-small {
-      font-size: 40px;
-      line-height: 45px;
       flex: 1 0 100%;
-    }
-    @include screen-medium {
-      font-size: 32px;
-      line-height: 37px;
-    }
-    @include screen-large {
-      font-size: 24px;
-      line-height: 29px;
     }
   }
   &__description {
+    font-size: 16px;
     line-height: 162%;
     color: #7e7e7e;
-    font-size: 38px;
     @include screen-small {
-      font-size: 30px;
       order: 1;
       text-align: left;
       margin-bottom: 50px;
     }
-    @include screen-medium {
-      font-size: 22px;
-      text-align: center;
-    }
     @include screen-large {
       margin-top: 24px;
-      font-size: 16px;
+      text-align: center;
     }
   }
   &__price {
@@ -84,7 +73,7 @@
     order: 2;
     width: 90%;
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 36px;
     &:after {
       content: "";
       position: relative;
@@ -93,11 +82,11 @@
       width: 250px;
       margin: 0 auto;
       display: block;
-      @include screen-medium {
+      @include screen-large {
         content: url(../../../assets/line.png);
       }
     }
-    @include screen-medium {
+    @include screen-large {
       order: 1;
       width: auto;
     }
@@ -106,23 +95,18 @@
     cursor: pointer;
     width: 90%;
     margin: 0 auto;
-    font-size: 30px;
     order: 3;
-    @include screen-medium {
-      font-size: 22px;
-      letter-spacing: 1.25px;
-    }
+    font-size: 16px;
     @include screen-large {
       order: 1;
       width: 220px;
-      font-size: 16px;
     }
   }
   @include screen-small {
-    flex: 1 0 60%;
-    margin-bottom: 50px;
+    flex: 1 0 100%;
+    flex-flow: row wrap;
   }
-  @include screen-medium {
+  @include screen-large {
     flex: none;
     width: 380px;
     display: block;
