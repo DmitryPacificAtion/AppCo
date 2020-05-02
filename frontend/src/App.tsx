@@ -1,20 +1,20 @@
-import React from 'react';
-import Main from './layouts/Main';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import React from "react";
+import Main from "./layouts/Main";
+import Statistics from "./layouts/Statistics";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const App = () => (
-  
-  <Router>
+  <BrowserRouter>
     <Switch>
-      <Route path="/">
-        <Main/>
-      </Route >
+      <Route exact path="/">
+        <Main />
+      </Route>
+      <Route path="/statistics">
+        <Statistics />
+      </Route>
+      <Route path="*"><div>404</div></Route>
     </Switch>
-  </Router>
-)
+  </BrowserRouter>
+);
 
 export default App;

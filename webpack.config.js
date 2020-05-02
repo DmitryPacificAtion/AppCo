@@ -14,6 +14,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(path.join(__dirname, 'dist')),
+    publicPath: '/',
   },
   optimization: {
     splitChunks: {
@@ -68,7 +69,7 @@ module.exports = {
       title: 'AppCo',
       filename: 'index.html',
       template: './frontend/index.html',
-      inject: 'body',
+      inject: false, // inject --- adds <script> with a bundle automatically, but need to remove this tag in html directly
     }),
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({

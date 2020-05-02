@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -10,6 +11,14 @@ server.use(webpackDevMiddleware(compiler, {
   open: config.devServer.host,
   publicPath: config.output.publicPath
 }));
+
+server.use('/', (req, res, next) => {
+  res.sendFile(path.join(__dirname, './index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+});
 
 server.listen(3000, function () {
   console.log('Example server listening on port 3000!\n');

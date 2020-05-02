@@ -11,9 +11,9 @@ const laptop = require("../../../assets/laptop.png");
 
 const Main = () => (
   <main>
-    <header className="header">
+    <header className="landing-header">
       <Container>
-        <div className="header__logo">AppCo</div>
+        <div className="landing-header__logo">AppCo</div>
         <section className="first-cta">
         <div className="first-cta__left-part">
           <h1 className="first-cta__title">
@@ -23,7 +23,7 @@ const Main = () => (
             Our design projects are fresh and simple and will benefit your business greatly. Learn
             more about our work!
           </p>
-          <Button to="#" className="first-cta__button">
+          <Button to="/statistics" className="first-cta__button">
             View Stats
           </Button>
         </div>
