@@ -19,8 +19,6 @@ const Button: FC<IProps> = props => {
   if(to) {
     return (<Link {...props} to={to} className={cx}>{props.children}</Link>)
   } else {
-    console.log('else', props, cx);
-    
     return (<button {...props} type={type} className={cx}>{props.children}</button>)
   }
 }

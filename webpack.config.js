@@ -66,7 +66,6 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'AppCo',
       filename: 'index.html',
       template: './frontend/index.html',
       inject: false, // inject --- adds <script> with a bundle automatically, but need to remove this tag in html directly
@@ -83,6 +82,7 @@ module.exports = {
     port: '3000',
     historyApiFallback: true,
     hot: true,
+    inline: true,
     open: true,
   },
 };
