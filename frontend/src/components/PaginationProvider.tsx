@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
 interface IProps {
-  component: React.FC | React.PureComponent | React.Component;
+  Component: React.FC | React.PureComponent | React.Component;
 }
-const PaginationProvider: FC<IProps> = ({ component }) => {
-  const Component = component;
+
+const PaginationProvider: FC = () => {
   return (
     <div className="pagination-provider__wrapper">
-      <Component />
+     Hello
     </div>
   )
 }

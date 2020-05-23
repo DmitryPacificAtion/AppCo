@@ -34,7 +34,8 @@ const Statistics: FC<IProps> = ({ title }) => {
       <Breadcrumbs title={title} />
       <Container>
         <h1>Users statistics</h1>
-        <PaginationProvider component={Table.bind({data: mockedData})} />
+        <Table data={mockedData} />
+        {/* <PaginationProvider Component={Table.bind({data: mockedData})} /> */}
       </Container>
     </>
   );
