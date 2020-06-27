@@ -1,11 +1,9 @@
-type Gender = 'Male' | 'Female';
-
 interface IUserCollection {
   id: number;
   first_name: string;
   last_name: string;
   email: string;
-  gender: Gender;
+  gender: string;
   ip_address: string;
 }
 
@@ -21,4 +19,4 @@ export interface IUserStatisticCollection extends IUserCollection {
   clicks: number;
 }
 
-export type UserStatistic = IUserCollection & IStatisticCollection;
+// export type UserStatistic = IUserCollection & IStatisticCollection;
