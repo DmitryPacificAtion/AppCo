@@ -10,7 +10,7 @@
   }
   &__previous {
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       width: 0%;
       left: 0;
@@ -26,8 +26,11 @@
   &__current {
     color: #3a80ba;
     &:before {
-      content: url("../../assets/chevron-right.svg");
+      content: url('../../assets/chevron-right.svg');
+      width: 8px;
+      height: 20px;
       display: inline-block;
+      vertical-align: middle;
       margin: 0 8px;
     }
   }

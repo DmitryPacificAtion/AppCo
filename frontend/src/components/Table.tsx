@@ -6,7 +6,8 @@ interface IProps {
   data: IUserStatisticCollection[];
 }
 
-const Table: FC<IProps> = ({ data }) => {
+const Table: FC<IProps> = props => {
+  const { data = []} = props;
   return (
     <table className="table">
       <thead className="table__head">
@@ -24,7 +25,7 @@ const Table: FC<IProps> = ({ data }) => {
       <tbody className="table__body">
         {data.map(
           ({ id, first_name, last_name, email, gender, ip_address, clicks, page_views }) => (
-            <tr>
+            <tr key={id}>
               <td className='center'>{id}</td>
               <td>{first_name}</td>
               <td>{last_name}</td>
