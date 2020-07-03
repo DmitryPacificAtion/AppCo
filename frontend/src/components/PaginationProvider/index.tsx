@@ -26,12 +26,13 @@ function paginationProvider(args: IProps) {
       };
     }
     render() {
-      const { activePageId, totalPages} = this.state;
+      const { activePageId, totalPages, prevFrom, visibleRows} = this.state;
       const handleNextPage = () => {
        const { activePageId, totalPages } = this.state;
         if(activePageId < totalPages)
         this.setState({
           activePageId: activePageId + 1,
+          prevFrom: prevFrom + visibleRows,
         });
       };
 
@@ -40,17 +41,19 @@ function paginationProvider(args: IProps) {
         if( activePageId > 0) {
           this.setState({
             activePageId: activePageId - 1,
+            prevFrom: prevFrom - visibleRows
           })
         }
       };
 
-      const { prevFrom, visibleRows } = this.state;
-      const newData: any[] = data.slice(0, prevFrom + visibleRows);
+      const newData: any[] = data.slice(prevFrom, prevFrom + visibleRows);
+      
       const pagination = [];
       for (var i = 1; i <= totalPages; i++) {
         const onClick = (id: number) => {
           this.setState({
             activePageId: id,
+            prevFrom: id * visibleRows - visibleRows,
           });
         };
 
