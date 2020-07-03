@@ -6,23 +6,24 @@ interface IProps {
   isActive?: boolean;
   isPrev?: boolean;
   isNext?: boolean;
+  id?: number;
+  handleClick: (e: any) => void;
 }
 
 const ControlItem: FC<IProps> = (props) => {
-  const { children, isNext = false, isPrev = false, isActive = false } = props;
+  const { children, isNext = false, isPrev = false, isActive = false, handleClick, id } = props;
   if (isNext || isPrev) {
-    const cx = classnames('pagination-provider__page', {
+    const csControl = classnames('pagination-provider__page', {
       'pagination-provider__page--next': isNext && !isPrev,
       'pagination-provider__page--prev': isPrev && !isNext,
+      active: isActive,
     });
-    return <input type="checkbox" name="pagination-controller" checked={isActive} className={cx} />;
+    return <div className={csControl} onClick={handleClick} />;
   }
-  return (
-    <label className="pagination-provider__page">
-      <input type="radio" name="pagination-controller" />
-      {children}
-    </label>
-  );
+  const csPage = classnames('pagination-provider__page', {
+    active: isActive,
+  });
+  return <div className={csPage} onClick={() => handleClick(id)}>{children}</div>;
 };
 
 export default ControlItem;

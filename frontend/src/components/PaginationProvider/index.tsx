@@ -26,29 +26,54 @@ function paginationProvider(args: IProps) {
       };
     }
     render() {
-      const handleChangeActivePage = (e: any) => {
-        const hasActive = e.currentTarget.querySelectorAll(
-          '.active:not(.pagination-provider__page--next):not(.pagination-provider__page--prev)'
-        );
-        Object.values<HTMLElement>(hasActive).forEach(el => el.classList.toggle('active'));
-        e.target.classList.toggle('active');
+      const handleChangeActivePage = (index: number) => {
+        // const hasActive = e.currentTarget.querySelectorAll('.active');
+        console.log('hasActive', index);
+
+        // Object.values<HTMLElement>(hasActive)
+        //   .filter(
+        //     (el) =>
+        //       !(
+        //         el.classList.contains('pagination-provider__page--next') ||
+        //         el.classList.contains('pagination-provider__page--prev')
+        //       )
+        //   )
+        //   .forEach((el) => el.classList.toggle('active'));
+        // console.log('e.target !== e.currentTarget', e.target !== e.currentTarget);
+
+        // if (e.target !== e.currentTarget) {
+        //   e.target.classList.toggle('active');
+        // }
       };
+
       const { prevFrom, visibleRows } = this.state;
       const newData: any[] = data.slice(0, prevFrom + visibleRows);
+      const pagination = [];
+      for (var i = 1; i <= this.state.totalPages; i++) {
+        const onClick = (id: number) => {
+          this.setState({
+            activePageId: id,
+          });
+        };
+
+        pagination.push(
+          <ControlItem
+            key={i}
+            handleClick={onClick}
+            id={i}
+            isActive={i === this.state.activePageId}
+          >
+            {i}
+          </ControlItem>
+        );
+      }
       return (
         <section>
           <Component {...this.props} data={newData} />
-          <div className="pagination-provider__wrapper" onClick={handleChangeActivePage}>
-            <ControlItem isPrev />
-            <ControlItem>1</ControlItem>
-            <ControlItem>2</ControlItem>
-            <ControlItem>3</ControlItem>
-            <ControlItem isNext isActive/>
-            {/* <div className="pagination-provider__page pagination-provider__page--prev"></div>
-            <div className="pagination-provider__page active">1</div>
-            <div className="pagination-provider__page">2</div>
-            <div className="pagination-provider__page">3</div>
-            <div className="pagination-provider__page pagination-provider__page--next active"></div> */}
+          <div className="pagination-provider__wrapper">
+            <ControlItem isPrev handleClick={() => {}} />
+            {pagination}
+            <ControlItem handleClick={() => {}} isNext isActive />
           </div>
         </section>
       );

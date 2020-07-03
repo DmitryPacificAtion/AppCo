@@ -18,32 +18,34 @@
     border-radius: 8px;
     margin-right: 8px;
     outline: none;
-    visibility: hidden;
     cursor: pointer;
-    // &.active {
-    //   background-color: #3a80ba;
-    //   border-color: #3a80ba;
-    //   color: #ffffff;
-    // }
-    // &--prev,
-    // &--next {
-    //   &:before {
-    //     content: url('../../../assets/chevron-right.svg');
-    //     border: none;
-    //     width: 15px;
-    //     margin-left: 16px;
-    //   }
-    //   &:checked {
-    //     &:before {
-    //       content: url('../../../assets/chevron-right-filled.svg');
-    //       display: block;
-    //     }
-    //   }
-    // }
-    // &--prev {
-    //   transform: rotate(180deg);
-    //   margin-right: 24px;
-    //   margin-left: 0;
-    // }
+    &.active {
+      background-color: #3a80ba;
+      border-color: #3a80ba;
+      color: #ffffff;
+    }
+    &--prev,
+    &--next {
+      border: none;
+      &:before {
+        content: '';
+        display: block;
+        background: url('../../../assets/chevron-right.svg') no-repeat center;
+        width: 15px;
+        height: 48px;
+        margin-left: 16px;
+      }
+      &.active {
+        background-color: #ffffff;
+        &:before {
+          content: '';
+          background: url('../../../assets/chevron-right-filled.svg') no-repeat center;
+        }
+      }
+    }
+    &--prev {
+      transform: rotate(180deg);
+      margin-left: 0;
+    }
   }
 }
