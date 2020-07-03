@@ -26,30 +26,28 @@ function paginationProvider(args: IProps) {
       };
     }
     render() {
-      const handleChangeActivePage = (index: number) => {
-        // const hasActive = e.currentTarget.querySelectorAll('.active');
-        console.log('hasActive', index);
+      const { activePageId, totalPages} = this.state;
+      const handleNextPage = () => {
+       const { activePageId, totalPages } = this.state;
+        if(activePageId < totalPages)
+        this.setState({
+          activePageId: activePageId + 1,
+        });
+      };
 
-        // Object.values<HTMLElement>(hasActive)
-        //   .filter(
-        //     (el) =>
-        //       !(
-        //         el.classList.contains('pagination-provider__page--next') ||
-        //         el.classList.contains('pagination-provider__page--prev')
-        //       )
-        //   )
-        //   .forEach((el) => el.classList.toggle('active'));
-        // console.log('e.target !== e.currentTarget', e.target !== e.currentTarget);
-
-        // if (e.target !== e.currentTarget) {
-        //   e.target.classList.toggle('active');
-        // }
+      const handlePrevPage = () => {
+        const { activePageId } = this.state;
+        if( activePageId > 0) {
+          this.setState({
+            activePageId: activePageId - 1,
+          })
+        }
       };
 
       const { prevFrom, visibleRows } = this.state;
       const newData: any[] = data.slice(0, prevFrom + visibleRows);
       const pagination = [];
-      for (var i = 1; i <= this.state.totalPages; i++) {
+      for (var i = 1; i <= totalPages; i++) {
         const onClick = (id: number) => {
           this.setState({
             activePageId: id,
@@ -60,8 +58,8 @@ function paginationProvider(args: IProps) {
           <ControlItem
             key={i}
             handleClick={onClick}
+            isActive={i === activePageId}
             id={i}
-            isActive={i === this.state.activePageId}
           >
             {i}
           </ControlItem>
@@ -71,9 +69,9 @@ function paginationProvider(args: IProps) {
         <section>
           <Component {...this.props} data={newData} />
           <div className="pagination-provider__wrapper">
-            <ControlItem isPrev handleClick={() => {}} />
+            <ControlItem handleClick={handlePrevPage} isPrev isActive={activePageId > 1}/>
             {pagination}
-            <ControlItem handleClick={() => {}} isNext isActive />
+            <ControlItem handleClick={handleNextPage} isNext isActive={activePageId < totalPages}/>
           </div>
         </section>
       );
