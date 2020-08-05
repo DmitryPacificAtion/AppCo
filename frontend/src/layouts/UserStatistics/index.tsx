@@ -1,32 +1,31 @@
-import React, { FC, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Header from '../../components/Header';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import Container from '../../components/Container';
-import Table from '../../components/Table';
-import paginationProvider from '../../components/PaginationProvider';
 // import { IUserStatisticCollection } from 'frontend/src/@types';
-import mockedData from '../../mockedData.json';
-import './styles.scss';
+import { RouteComponentProps } from 'react-router';
+// import './styles.scss';
 
 interface IProps {
-  title: string;
+  title?: string;
 }
 
-const Statistics: FC<IProps> = ({ title }) => {
+const UserStatistics = (props: RouteComponentProps & IProps) => {
+  const { title } = props;
   useEffect(() => {
     document.title = `${title} | AppCo`;
   });
-  const Pagination = paginationProvider({ data: mockedData, Component: Table });
+  console.log(props);
+  
   return (
     <>
       <Header />
       <Breadcrumbs title={title} />
       <Container>
         <h1>{title}</h1>
-        <Pagination />
       </Container>
     </>
   );
 };
 
-export default Statistics;
+export default UserStatistics;

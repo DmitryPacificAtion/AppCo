@@ -3,13 +3,13 @@ const ROUTES = {
     path: '/',
     title: 'Home'
   },
-  statistics: {
-    path: '/statistics',
-    title: 'Statistics'
-  },
   userStatistics: {
     path: '/statistics/:id',
     title: 'User statistics'
+  },
+  statistics: {
+    path: '/statistics',
+    title: 'Statistics'
   },
   notFound: {
     path: '*',

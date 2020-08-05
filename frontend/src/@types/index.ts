@@ -1,22 +1,11 @@
-interface IUserCollection {
+export interface IUserStatisticCollection {
   id: number;
   first_name: string;
   last_name: string;
   email: string;
   gender: string;
   ip_address: string;
-}
-
-interface IStatisticCollection {
-  user_id: number;
-  date: string;
   page_views: number;
   clicks: number;
 }
 
-export interface IUserStatisticCollection extends IUserCollection {
-  page_views: number;
-  clicks: number;
-}
-
-// export type UserStatistic = IUserCollection & IStatisticCollection;
