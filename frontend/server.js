@@ -20,6 +20,6 @@ server.use('/', (req, res, next) => {
   })
 });
 
-server.listen(3000, function () {
-  console.log('Example server listening on port 3000!\n');
+server.listen(5000, function () {
+  console.log('Example server listening on port 5000!\n');
 });
