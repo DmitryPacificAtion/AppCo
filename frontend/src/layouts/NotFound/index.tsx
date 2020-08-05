@@ -14,7 +14,7 @@ const NotFound: FC<IProps> = ({title}) => {
   return (
   <>
     <Header />
-    <Breadcrumbs />
+      <Breadcrumbs />
     <Container>Page not Found</Container>
   </>
 )};
