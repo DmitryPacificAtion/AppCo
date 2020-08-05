@@ -16,14 +16,30 @@ const Statistics: FC<IProps> = ({ title }) => {
   useEffect(() => {
     document.title = `${title} | AppCo`;
   });
-  const Pagination = paginationProvider({ data: mockedData, Component: Table });
+  useEffect(() => {
+    fetch("/api/user-statistic", {
+      method: "GET",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+      mode: "cors",
+    })
+      .then((resp) => {
+        console.log("resp", resp);
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
+  });
+  const TableWithPagination = paginationProvider({ data: mockedData, Component: Table });
   return (
     <>
       <Header />
       <Breadcrumbs title={title} />
       <Container>
         <h1>{title}</h1>
-        <Pagination />
+        <TableWithPagination />
       </Container>
     </>
   );

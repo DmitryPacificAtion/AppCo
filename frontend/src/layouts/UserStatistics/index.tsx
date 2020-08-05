@@ -14,9 +14,7 @@ const UserStatistics = (props: RouteComponentProps & IProps) => {
   const { title } = props;
   useEffect(() => {
     document.title = `${title} | AppCo`;
-  });
-  console.log(props);
-  
+  }); 
   return (
     <>
       <Header />

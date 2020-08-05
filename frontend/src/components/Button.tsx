@@ -11,15 +11,12 @@ interface IProps extends React.HTMLAttributes<ReactNode> {
 
 const Button: FC<IProps> = props => {
   const { type = 'submit', to, className, dark = false } = props;
-  const cx = classnames(className, 'button', {  
-    'button--dark': dark,
-    'button--light': !dark,
-  })
+  const cx = classnames(className, 'button', dark ? 'button--dark' : 'button--light')
 
   if(to) {
     return (<Link {...props} to={to} className={cx}>{props.children}</Link>)
   } else {
-    return (<button {...props} type={type} className={cx}>{props.children}</button>)
+    return (<button type={type} className={cx}>{props.children}</button>)
   }
 }
 

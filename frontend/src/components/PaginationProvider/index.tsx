@@ -68,6 +68,9 @@ function paginationProvider(args: IProps) {
           </ControlItem>
         );
       }
+      if (totalPages === 0) {
+        return <div>No data</div>;
+      }
       return (
         <section>
           <Component {...this.props} data={newData} />
