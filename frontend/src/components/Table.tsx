@@ -1,13 +1,14 @@
 import React, { FC } from "react";
 import "./Table.scss";
 import { IUserStatisticCollection } from "../@types";
+import TableRow from "./TableRow";
 
 interface IProps {
   data: IUserStatisticCollection[];
 }
 
-const Table: FC<IProps> = props => {
-  const { data = []} = props;
+const Table: FC<IProps> = (props) => {
+  const { data = [] } = props;
   return (
     <table className="table">
       <thead className="table__head">
@@ -23,20 +24,9 @@ const Table: FC<IProps> = props => {
         </tr>
       </thead>
       <tbody className="table__body">
-        {data.map(
-          ({ id, first_name, last_name, email, gender, ip_address, clicks, page_views }) => (
-            <tr key={id}>
-              <td className='center'>{id}</td>
-              <td>{first_name}</td>
-              <td>{last_name}</td>
-              <td>{email}</td>
-              <td>{gender}</td>
-              <td>{ip_address}</td>
-              <td>{clicks}</td>
-              <td>{page_views}</td>
-            </tr>
-          )
-        )}
+        {data.map((rowData) => (
+          <TableRow {...rowData} key={rowData.id}/>
+        ))}
       </tbody>
     </table>
   );

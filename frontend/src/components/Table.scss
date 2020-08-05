@@ -23,24 +23,5 @@ table {
     td {
       padding: 6px 24px;
     }
-    tr {
-      &:nth-child(odd) {
-        background-color: #fbfbfb;
-      }
-      &:nth-child(even) {
-        background-color: #f1f1f1;
-      }
-      &:last-child {
-        > td:first-child {
-          border-radius: 0 0 0 7px;
-        }
-        > td:last-child {
-          border-radius: 0 0 7px;
-        }
-      }
-    }
-  }
-  .center {
-    text-align: center;
   }
 }

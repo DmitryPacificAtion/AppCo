@@ -1,0 +1,24 @@
+.table-row {
+  &:nth-child(odd) {
+    background-color: #fbfbfb;
+  }
+  &:nth-child(even) {
+    background-color: #f1f1f1;
+  }
+  &:last-child {
+    > td:first-child {
+      border-radius: 0 0 0 7px;
+    }
+    > td:last-child {
+      border-radius: 0 0 7px;
+    }
+  }
+  &:hover {
+      cursor: pointer;
+  }
+  a {
+    color: inherit;
+    font-size: 1em;
+    text-decoration: none;
+  }
+}
