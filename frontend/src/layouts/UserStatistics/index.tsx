@@ -14,13 +14,15 @@ const UserStatistics = (props: RouteComponentProps & IProps) => {
   const { title } = props;
   useEffect(() => {
     document.title = `${title} | AppCo`;
-  }); 
+  });
   return (
     <>
       <Header />
       <Breadcrumbs title={title} />
       <Container>
         <h1>{title}</h1>
+        <h2>Clicks</h2>
+        <h2>Vievs</h2>
       </Container>
     </>
   );
