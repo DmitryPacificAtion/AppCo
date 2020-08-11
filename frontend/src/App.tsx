@@ -9,7 +9,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ROUTES from "./constants/routes";
 
 const App = () => {
-  repository();
+  // repository();
   return (
     <BrowserRouter>
       <Switch>
