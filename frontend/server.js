@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
+const fs = require('fs');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 
 const server = express();
@@ -22,6 +23,14 @@ server.use('/api/user-statistic', (req, res, next) => {
 
 server.use('/', (req, res, next) => {
   res.sendFile(path.join(__dirname, './index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+});
+
+server.use('/api/user-statistic', (req, res, next) => {
+  res.sendFile(path.join(__dirname, '../mockedData.json'), function(err) {
     if (err) {
       res.status(500).send(err)
     }
